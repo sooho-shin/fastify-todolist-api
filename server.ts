@@ -1,5 +1,7 @@
 import Fastify from 'fastify'
 import router from './routes'
+import autoLoad from '@fastify/autoload'
+import path from 'path'
 
 const fastify = Fastify({
   logger: true,
@@ -7,6 +9,9 @@ const fastify = Fastify({
 
 fastify.register(router)
 
+fastify.register(autoLoad, {
+  dir: path.join(__dirname, 'routes'),
+})
 /**
  * Run the server!
  */

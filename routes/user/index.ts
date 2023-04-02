@@ -8,7 +8,7 @@ import {
 
 export default fp(
   async (server: FastifyInstance, opts: FastifyPluginOptions) => {
-    server.get('/user', (request: FastifyRequest, reply: FastifyReply) => {
+    server.get('/', (request: FastifyRequest, reply: FastifyReply) => {
       return { hello: 'user!!' }
     })
   },

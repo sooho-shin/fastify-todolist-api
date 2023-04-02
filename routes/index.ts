@@ -12,9 +12,9 @@ export default fp(
   async (server: FastifyInstance, opts: FastifyPluginOptions) => {
     server.register(userRoutes)
 
-    server.get('/', (request: FastifyRequest, reply: FastifyReply) => {
-      return { hello: 'worldzz' }
-    })
+    // server.get('/', (request: FastifyRequest, reply: FastifyReply) => {
+    //   return { hello: 'worldzz' }
+    // })
     server.get('/todo', (request: FastifyRequest, reply: FastifyReply) => {
       reply.code(200).send('get memo list')
     })
