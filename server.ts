@@ -7,11 +7,11 @@ const fastify = Fastify({
   logger: true,
 })
 
-fastify.register(router)
-
 fastify.register(autoLoad, {
   dir: path.join(__dirname, 'routes'),
 })
+
+fastify.register(router)
 /**
  * Run the server!
  */
