@@ -1,12 +1,12 @@
-import fp from 'fastify-plugin'
+import fp from "fastify-plugin";
 import {
   FastifyInstance,
   FastifyRequest,
   FastifyReply,
   FastifyPluginOptions,
-} from 'fastify'
+} from "fastify";
 
-import userRoutes from './user'
+import userRoutes from "../user";
 
 export default fp(
   async (server: FastifyInstance, opts: FastifyPluginOptions) => {
@@ -15,9 +15,10 @@ export default fp(
     // server.get('/', (request: FastifyRequest, reply: FastifyReply) => {
     //   return { hello: 'worldzz' }
     // })
-    server.get('/todo', (request: FastifyRequest, reply: FastifyReply) => {
-      reply.code(200).send('get memo list')
-    })
+
+    server.get("/todo", (request: FastifyRequest, reply: FastifyReply) => {
+      reply.code(200).send("get memo list");
+    });
 
     // server.get('/todo/:id', (request: FastifyRequest, reply: FastifyReply) => {
     //   reply.code(200).send('get memo')
@@ -40,5 +41,5 @@ export default fp(
     //     reply.code(200).send('delete memo')
     //   },
     // )
-  },
-)
+  }
+);

@@ -1,26 +1,29 @@
-import Fastify from 'fastify'
-import router from './routes'
-import autoLoad from '@fastify/autoload'
-import path from 'path'
+import Fastify from "fastify";
+// import router from "./routes/todo";
+import autoLoad from "@fastify/autoload";
+import path from "path";
 
 const fastify = Fastify({
   logger: true,
-})
+});
 
 fastify.register(autoLoad, {
-  dir: path.join(__dirname, 'routes'),
-})
+  dir: path.join(__dirname, "routes"),
+});
 
-fastify.register(router)
+// fastify.register(router);
+
 /**
  * Run the server!
  */
+
 const start = async () => {
   try {
-    await fastify.listen({ port: 3000 })
+    await fastify.listen({ port: 3000 });
   } catch (err) {
-    fastify.log.error(err)
-    process.exit(1)
+    fastify.log.error(err);
+    process.exit(1);
   }
-}
-start()
+};
+
+start();
