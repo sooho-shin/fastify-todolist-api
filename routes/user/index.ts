@@ -6,10 +6,17 @@ import {
   FastifyPluginOptions,
 } from "fastify";
 
+import { db } from "@/utils/db";
+
 export default fp(
   async (server: FastifyInstance, opts: FastifyPluginOptions) => {
-    server.get("/user", (request: FastifyRequest, reply: FastifyReply) => {
-      return { hello: "user!!zz" };
-    });
+    server.get(
+      "/user",
+      async (request: FastifyRequest, reply: FastifyReply) => {
+        const [result] = await db.execute("select * from user");
+        console.log("result=====>", result);
+        await reply.code(200).send(result);
+      }
+    );
   }
 );

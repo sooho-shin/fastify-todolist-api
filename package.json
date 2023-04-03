@@ -1,13 +1,16 @@
 {
   "dependencies": {
     "@fastify/autoload": "^5.7.1",
+    "@fastify/mysql": "^4.1.0",
     "fastify": "^4.15.0",
-    "fastify-plugin": "^4.5.0"
+    "fastify-plugin": "^4.5.0",
+    "mysql2": "^3.2.0"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
     "pino-pretty": "^10.0.0",
     "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.0.3"
   },
   "scripts": {

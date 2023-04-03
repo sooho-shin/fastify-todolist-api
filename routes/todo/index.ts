@@ -6,7 +6,7 @@ import {
   FastifyPluginOptions,
 } from "fastify";
 
-import userRoutes from "../user";
+// import { db } from "@/utils/db";
 
 export default fp(
   async (server: FastifyInstance, opts: FastifyPluginOptions) => {
@@ -16,9 +16,14 @@ export default fp(
     //   return { hello: 'worldzz' }
     // })
 
-    server.get("/todo", (request: FastifyRequest, reply: FastifyReply) => {
-      reply.code(200).send("get memo list");
-    });
+    server.get(
+      "/todo",
+      async (request: FastifyRequest, reply: FastifyReply) => {
+        // const result = await db.query("select * from todo");
+        // console.log("result=====>", result);
+        reply.code(200).send("resultzz");
+      }
+    );
 
     // server.get('/todo/:id', (request: FastifyRequest, reply: FastifyReply) => {
     //   reply.code(200).send('get memo')
