@@ -5,6 +5,7 @@ import {
   FastifyReply,
   FastifyPluginOptions,
 } from "fastify";
+import { getTodolist } from "@/services/todo";
 
 // import { db } from "@/utils/db";
 
@@ -21,7 +22,8 @@ export default fp(
       async (request: FastifyRequest, reply: FastifyReply) => {
         // const result = await db.query("select * from todo");
         // console.log("result=====>", result);
-        reply.code(200).send("resultzz");
+        const result = getTodolist();
+        reply.code(200).send(result);
       }
     );
 
